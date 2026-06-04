@@ -25,8 +25,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         try {
             Department department = new Department();
-            department.setDepartment_name("HR");
-            department.setDepartment_location("Building A1");
+            department.setDepartment_name(department.getDepartment_name());
+            department.setDepartment_location(department.getDepartment_location());
 
             departmentRepository.save(department);
             log.info("Department saved successfully");

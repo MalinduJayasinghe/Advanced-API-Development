@@ -35,10 +35,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         try {
             Employee employee = new Employee();
-            employee.setFirstName("Yasiru");
-            employee.setLastName("Amarathunga");
-            employee.setAddress("Panadura");
-            employee.setJoinedDate(LocalDateTime.now());
+            employee.setFirstName(employee.getFirstName());
+            employee.setLastName(employee.getLastName());
+            employee.setAddress(employee.getAddress());
+            employee.setJoinedDate(employee.getJoinedDate());
 
             employeeRepository.save(employee);
             log.info("Employee saved successfully");

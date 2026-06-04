@@ -1,7 +1,6 @@
 package lk.ijse.AAD_75.controller;
 
 import lk.ijse.AAD_75.dto.DepartmentDTO;
-import lk.ijse.AAD_75.dto.EmployeeDTO;
 import lk.ijse.AAD_75.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -17,13 +16,13 @@ public class DepartmentController {
     private final DepartmentService departmentService;
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public String saveDepartment() {
+    public String saveDepartment(@RequestBody DepartmentDTO departmentDTO) {
         departmentService.saveDepartment();
         return "Department Saved";
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<DepartmentDTO> getAllDepartments() {
+    public List<DepartmentDTO> getAllDepartments(@RequestBody DepartmentDTO departmentDTO) {
         List<DepartmentDTO> allDepartments = departmentService.getAllDepartments();
         return allDepartments;
     }
