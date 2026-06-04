@@ -4,17 +4,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Department {
+public class School {
 
     @Id
-    private Long department_id;
-    private String department_name;
-    private String department_location;
+    private Long school_id;
+    private String school_name;
+    private String school_location;
 }
