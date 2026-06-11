@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static lk.ijse.AAD_75.constant.ResponseCode.OPERATION_SUCCESS;
 import static lk.ijse.AAD_75.constant.ResponseMessage.SUCCESS_MESSAGE;
 
@@ -31,7 +33,8 @@ public class StudentController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public CommonResponse getAllStudents() {
         // return studentService.getAllStudents
-        return new CommonResponse(OPERATION_SUCCESS,studentService.getAllStudents(),SUCCESS_MESSAGE);
+        List<StudentDTO> studentDTOList = studentService.getAllStudents();
+        return new CommonResponse(OPERATION_SUCCESS,studentDTOList,SUCCESS_MESSAGE);
     }
 
     @GetMapping(value = "/{student_id}", produces = MediaType.APPLICATION_JSON_VALUE)

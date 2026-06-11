@@ -22,7 +22,7 @@ public class DepartmentController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public String saveDepartment(@RequestBody DepartmentDTO departmentDTO) {
-        departmentService.saveDepartment();
+        departmentService.saveDepartment(departmentDTO);
         return "Department Saved";
     }
 

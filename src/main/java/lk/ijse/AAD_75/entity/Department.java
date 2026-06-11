@@ -1,10 +1,9 @@
 package lk.ijse.AAD_75.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,4 +16,10 @@ public class Department {
     private Long department_id;
     private String department_name;
     private String department_location;
+
+    @OneToMany(mappedBy = "department",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<EmployeeDepartment> employeeDepartmentList;
 }

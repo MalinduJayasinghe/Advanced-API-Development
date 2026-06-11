@@ -21,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final DepartmentRepository departmentRepository;
 
     @Override
-    public void saveDepartment() {
+    public void saveDepartment(DepartmentDTO departmentDTO) {
 
         log.info("Execute method saveDepartment");
 

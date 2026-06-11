@@ -5,6 +5,7 @@ import lk.ijse.AAD_75.enumeration.EmployeeStatus;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 // Entity classes must all be encapsulated
 //@Data - loads Getters, Setters, toString and Equals for the relevant entity, not normally used
@@ -26,4 +27,10 @@ public class Employee {
 
     @Enumerated(EnumType.STRING)
     private EmployeeStatus employeeStatus;
+
+    @OneToMany(mappedBy = "employee",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<EmployeeDepartment> employeeDepartmentList;
 }

@@ -25,7 +25,7 @@ public class EmployeeController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public String saveEmployee(@RequestBody EmployeeDTO employeeDTO) {
-        employeeService.saveEmployee();
+        employeeService.saveEmployee(employeeDTO);
         return "Employee Saved";
     }
 

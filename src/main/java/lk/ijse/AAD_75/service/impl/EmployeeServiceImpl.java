@@ -31,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }*/
 
     @Override
-    public void saveEmployee() {
+    public void saveEmployee(EmployeeDTO employeeDTO) {
 
         log.info("Execute method saveEmployee");
 

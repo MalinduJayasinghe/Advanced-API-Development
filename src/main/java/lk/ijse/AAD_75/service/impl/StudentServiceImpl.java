@@ -3,7 +3,9 @@ package lk.ijse.AAD_75.service.impl;
 import lk.ijse.AAD_75.dto.EmployeeDTO;
 import lk.ijse.AAD_75.dto.StudentDTO;
 import lk.ijse.AAD_75.entity.Employee;
+import lk.ijse.AAD_75.entity.School;
 import lk.ijse.AAD_75.entity.Student;
+import lk.ijse.AAD_75.repository.SchoolRepository;
 import lk.ijse.AAD_75.repository.StudentRepository;
 import lk.ijse.AAD_75.service.StudentService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,7 @@ import java.util.Optional;
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository studentRepository;
+    private final SchoolRepository schoolRepository;
 
     @Override
     public void saveStudent(StudentDTO studentDTO) throws Exception {
@@ -36,6 +39,12 @@ public class StudentServiceImpl implements StudentService {
             student.setStudent_fname(student.getStudent_contact());
             student.setStudent_lastname(student.getStudent_lastname());
             student.setStudent_contact(student.getStudent_contact());
+
+            Optional<School> optionalSchool = schoolRepository.findById(studentDTO.getSchool_id());
+
+            if(optionalSchool.isEmpty()){
+                throw new RuntimeException("School not found");
+            }
 
             studentRepository.save(student);
             log.info("Student saved successfully");

@@ -15,4 +15,6 @@ public class StudentDTO {
     private String student_fname;
     private String student_lastname;
     private String student_contact;
+
+    private long school_id;
 }
