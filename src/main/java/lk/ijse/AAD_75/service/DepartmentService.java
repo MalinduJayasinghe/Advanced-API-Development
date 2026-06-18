@@ -8,7 +8,7 @@ import java.util.List;
 public interface DepartmentService {
 
     void saveDepartment(DepartmentDTO departmentDTO);
-    List<DepartmentDTO> getAllDepartments();
+    List<DepartmentDTO> getAllDepartments(DepartmentDTO departmentDTO);
     DepartmentDTO getDepartmentDetails(long departmentId);
     void updateDepartment(DepartmentDTO departmentDTO);
     void updateLocation(UpdateDepartmentDTO updateDepartmentDTO);

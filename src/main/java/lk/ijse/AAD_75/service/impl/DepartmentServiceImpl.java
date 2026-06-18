@@ -38,7 +38,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<DepartmentDTO> getAllDepartments (){
+    public List<DepartmentDTO> getAllDepartments (DepartmentDTO departmentDTO) {
 
         try {
             log.info("Execute method getAllDepartments");
@@ -47,7 +47,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
             for (Department department : departmentList){
 
-                DepartmentDTO departmentDTO = new DepartmentDTO();
+                departmentDTO = new DepartmentDTO();
                 departmentDTO.setDepartment_id(department.getDepartment_id());
                 departmentDTO.setDepartment_name(department.getDepartment_name());
                 departmentDTO.setDepartment_location(department.getDepartment_location());

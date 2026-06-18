@@ -28,7 +28,7 @@ public class DepartmentController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<DepartmentDTO> getAllDepartments(@RequestBody DepartmentDTO departmentDTO) {
-        List<DepartmentDTO> allDepartments = departmentService.getAllDepartments();
+        List<DepartmentDTO> allDepartments = departmentService.getAllDepartments(departmentDTO);
         return allDepartments;
     }
 
