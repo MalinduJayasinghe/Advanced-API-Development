@@ -31,7 +31,7 @@ public class EmployeeController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<EmployeeDTO> getAllEmployees(@RequestBody EmployeeDTO employeeDTO) {
-        List<EmployeeDTO> allEmployees = employeeService.getAllEmployees();
+        List<EmployeeDTO> allEmployees = employeeService.getAllEmployees(employeeDTO);
         return allEmployees;
     }
 

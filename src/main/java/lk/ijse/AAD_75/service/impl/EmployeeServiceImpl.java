@@ -51,7 +51,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<EmployeeDTO> getAllEmployees(){
+    public List<EmployeeDTO> getAllEmployees(EmployeeDTO employeeDTO) {
 
         try {
             log.info("Execute method getAllEmployees");
@@ -60,7 +60,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
             for (Employee employee : employeeList) {
 
-                EmployeeDTO employeeDTO = new EmployeeDTO();
+                employeeDTO = new EmployeeDTO();
                 employeeDTO.setEmployeeId(employee.getEmployeeId());
                 employeeDTO.setFirstName(employee.getFirstName());
                 employeeDTO.setLastName(employee.getLastName());
