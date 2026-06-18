@@ -28,7 +28,7 @@ public class OrderController {
         return new CommonResponse(SUCCESS_MESSAGE, OPERATION_SUCCESS);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "{order_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public CommonResponse getOrderDetails(@PathVariable long order_id) {
 
         GetOrderDTO orderDetails = orderService.getOrderDetails(order_id);
